@@ -34,7 +34,7 @@ def add():
         cursor = get_db().cursor()
         new_name = request.form["item_name"]
         new_description = request.form["item_description"]
-        sql = "INSERT INTO BacPac (Name,Description) VALUES (?,?)"
+        sql = "INSERT INTO BacPac (Item,Description) VALUES (?,?)"
         cursor.execute(sql,(new_name,new_description))
         get_db().commit()
     return redirect ('/')
